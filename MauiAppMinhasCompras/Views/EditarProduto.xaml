@@ -1,23 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- Declaração do arquivo XML, que define a estrutura da interface da página. -->
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppMinhasCompras.Views.EditarProduto"
              Title="{Binding Descricao}">
-    
-   <ContentPage.ToolbarItems>
+    <!-- Define a página do tipo ContentPage, que será a tela de edição do produto. 
+O título da página vai exibir a descrição do produto vinculado. -->
+
+    <ContentPage.ToolbarItems>
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked"/>
-   </ContentPage.ToolbarItems>
+        <!-- Aqui adicionamos um botão na barra superior com o texto "Salvar", 
+             que quando clicado executa o método ToolbarItem_Clicked no code-behind. -->
+    </ContentPage.ToolbarItems>
 
-        <VerticalStackLayout Spacing="10" Padding="10">
-            <Label Text="Descrição do Produto: "/>
-            <Entry x:Name="txt_descricao" Text="{Binding Descricao}"/>
+    <VerticalStackLayout Spacing="10" Padding="10">
+        <!-- Layout empilhado na vertical, com espaçamento de 10 entre elementos 
+        e margem de 10 em volta de todo o conteúdo. -->
 
+        <Label Text="Descrição do Produto: "/>
+        <!-- Rótulo indicando o campo da descrição do produto. -->
 
-            <Label Text="Quantidade: "/>
-            <Entry x:Name="txt_quantidade" Text="{Binding Quantidade}" Keyboard="Numeric"/>
+        <Entry x:Name="txt_descricao" Text="{Binding Descricao}"/>
+        <!-- Caixa de texto onde o usuário poderá alterar a descrição do produto. 
+                 O texto inicial já vem preenchido via binding com o valor da descrição atual. -->
 
+        <Label Text="Quantidade: "/>
+        <!-- Rótulo indicando o campo da quantidade. -->
 
-            <Label Text="Preço Unitário: "/>
-            <Entry x:Name="txt_preco" Text="{Binding Preco}" Keyboard="Numeric"/>
-        </VerticalStackLayout>
+        <Entry x:Name="txt_quantidade" Text="{Binding Quantidade}" Keyboard="Numeric"/>
+        <!-- Caixa de texto para editar a quantidade. 
+                 O teclado numérico é ativado automaticamente no celular. -->
+
+        <Label Text="Preço Unitário: "/>
+        <!-- Rótulo indicando o campo do preço. -->
+
+        <Entry x:Name="txt_preco" Text="{Binding Preco}" Keyboard="Numeric"/>
+        <!-- Caixa de texto para editar o preço do produto, também com teclado numérico. -->
+
+    </VerticalStackLayout>
 </ContentPage>

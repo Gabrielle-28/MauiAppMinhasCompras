@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- Definindo o início do arquivo XML e a codificação utilizada para exibição de caracteres especiais -->
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppMinhasCompras.Views.NovoProduto"
              Title="Novo Produto">
+    <!-- Definindo o ContentPage, que é a página principal, com a referência à classe que será associada (NovoProduto) e o título exibido na barra de navegação -->
 
     <ContentPage.ToolbarItems>
+        <!-- Definindo a barra de ferramentas no topo da página -->
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked"/>
+        <!-- Definindo o item da barra de ferramentas "Salvar", que ao ser clicado chama o método ToolbarItem_Clicked -->
     </ContentPage.ToolbarItems>
-    
+
     <VerticalStackLayout Spacing="10" Padding="10">
+        <!-- Layout vertical onde os elementos são dispostos em uma coluna, com espaçamento de 10 e preenchimento interno de 10 -->
+
         <Label Text="Descrição do Produto: "/>
+        <!-- Exibe o texto "Descrição do Produto" -->
         <Entry x:Name="txt_descricao"/>
-        
-        
+        <!-- Entrada de texto para o nome/descritivo do produto, onde o usuário pode preencher -->
+
         <Label Text="Quantidade: "/>
+        <!-- Exibe o texto "Quantidade" -->
         <Entry x:Name="txt_quantidade" Keyboard="Numeric"/>
-        
+        <!-- Entrada de texto para a quantidade do produto, configurada para aceitar apenas números (numeric keyboard) -->
 
         <Label Text="Preço Unitário: "/>
+        <!-- Exibe o texto "Preço Unitário" -->
         <Entry x:Name="txt_preco" Keyboard="Numeric"/>
+        <!-- Entrada de texto para o preço do produto, configurada para aceitar apenas números (numeric keyboard) -->
 
     </VerticalStackLayout>
 </ContentPage>

@@ -23,6 +23,7 @@ public partial class ListaProduto : ContentPage
     {
         try
         {
+           lista.Clear(); // Limpa a lista de produtos
             // Busca todos os produtos no banco de dados
             List<Produto> tmp = await App.Db.Getall();
 
