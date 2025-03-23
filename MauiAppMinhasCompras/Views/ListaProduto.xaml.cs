@@ -101,7 +101,7 @@ public partial class ListaProduto : ContentPage
 
             // Exibe um alerta para confirmar a exclusão do produto
             bool confirm = await DisplayAlert(
-                "Tem Certeza?", "Remover Produto?", "Sim", "Não");
+                "Tem Certeza?", $"Remover Produto {p.Descricao}?", "Sim", "Não");
 
             // Se o usuário confirmar a exclusão
             if (confirm)
@@ -116,7 +116,28 @@ public partial class ListaProduto : ContentPage
         catch (Exception ex)
         {
             // Exibe um alerta em caso de erro
-            DisplayAlert("Ops", ex.Message, "OK");
+           await DisplayAlert("Ops", ex.Message, "OK");
         }
+    }
+
+    private void lst_produtos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        try
+        {
+
+                Produto p = e.SelectedItem as Produto;
+
+            Navigation.PushAsync(new Views.EditarProduto
+            {
+                BindingContext = p,
+            });
+        }
+        catch (Exception ex)
+        {
+
+        }
+
+
+
     }
 }

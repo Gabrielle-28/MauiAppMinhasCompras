@@ -20,10 +20,10 @@
                    TextChanged="txt_search_TextChanged"/>
 
         <!-- Lista de produtos -->
-        <ListView x:Name="lst_produtos">
+        <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected">
             <!-- Cabeçalho da ListView com as colunas -->
             <ListView.Header>
-                <Grid ColumnDefinitions="*, *, *, *, *, *">
+                <Grid ColumnDefinitions="*, *, *, *, *">
                     <Label Grid.Column="0" Text="ID"/>
                     <Label Grid.Column="1" Text="Descrição"/>
                     <Label Grid.Column="2" Text="Preço"/>
@@ -42,7 +42,7 @@
                         </ViewCell.ContextActions>
 
                         <!-- Layout para exibir as informações de cada produto -->
-                        <Grid ColumnDefinitions="*, *, *, *, *, *">
+                        <Grid ColumnDefinitions="*, *, *, *, *">
                             <!-- Exibe o ID do produto -->
                             <Label Grid.Column="0" Text="{Binding Id}" />
                             <!-- Exibe a descrição do produto -->
